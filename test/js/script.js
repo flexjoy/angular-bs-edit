@@ -3,7 +3,8 @@
 app.controller('Ctrl', function($scope, $q) {
 	var data = {
 		text: 'This is a sample text',
-		select: { id: 3, name: 'London'}
+		select: { id: 3, name: 'London'},
+		textarea: 'Lorem ipsum dolor sit amet'
 	};
 
 	var list = [
@@ -16,6 +17,7 @@ app.controller('Ctrl', function($scope, $q) {
 	$scope.clear = function () {
 		$scope.data.text = '';
 		$scope.data.select = '';
+		$scope.data.textarea = '';
 	};
 
 	$scope.getList = function() {

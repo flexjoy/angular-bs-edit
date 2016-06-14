@@ -110,3 +110,51 @@ app.directive('bseSelect', function() {
 		}
 	};
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// bseTextarea directive
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+app.directive('bseTextarea', function() {
+	return {
+		restrict: 'A',
+		scope: {
+			value: '=bseTextarea',
+			empty: '=?'
+		},
+		template: '<textarea ng-model="newValue" class="form-control"></textarea><pre ng-class="{\'bse-empty\' : !value}" ng-bind="value || empty"></pre>',
+		link: function(scope, element) {
+
+			scope.empty = scope.empty ? scope.empty : 'empty';
+			element.addClass('edit-in-place');
+			var inputElement = angular.element( element.children()[0]);
+			var preElement = angular.element( element.children()[1]);
+
+			preElement.bind('click', function () {
+				inputElement[0].style.height = element[0].offsetHeight + 'px';
+				scope.newValue = angular.copy(scope.value);
+				scope.$apply();
+				element.addClass('active');
+				inputElement[0].focus();
+			});
+
+			inputElement.bind('blur', function() {
+				scope.value = scope.newValue;
+				scope.$apply();
+				element.removeClass('active');
+			});
+
+			inputElement.bind('keydown', function (event) {
+				if(event.which === 13) {
+					var h = inputElement[0].offsetHeight + 20;
+					inputElement[0].style.height = h + 'px';
+				}
+
+				if(event.which === 27) {
+					scope.newValue = scope.value;
+					this.blur();
+					event.preventDefault();
+				}
+			});
+		}
+	};
+});

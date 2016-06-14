@@ -7,7 +7,7 @@
 
 /* common style definition -------------------------------------------------------------------------------------------*/
 
-[bse-text], [bse-select] {
+[bse-text], [bse-select], [bse-textarea]{
 	cursor: pointer;
 }
 
@@ -23,10 +23,9 @@
 	box-shadow: none;
 }
 
-[bse-text].edit-in-place.active span,
-[bse-text].edit-in-place input,
-[bse-select].edit-in-place.active span,
-[bse-select].edit-in-place select {
+[bse-text].edit-in-place.active span,    [bse-text].edit-in-place input,
+[bse-select].edit-in-place.active span,  [bse-select].edit-in-place select,
+[bse-textarea].edit-in-place.active pre, [bse-textarea].edit-in-place textarea {
 	display: none;
 }
 
@@ -42,6 +41,25 @@
 	display: inline-block;
 	padding-left: 8px;
 }
+
+/* bse-textarea ------------------------------------------------------------------------------------------------------*/
+
+[bse-textarea].edit-in-place pre {
+	color: #428bca;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 7px 13px;
+	border: none;
+	background-color: transparent;
+	white-space: pre-wrap;
+	margin-bottom: 0;
+}
+
+[bse-textarea].edit-in-place.active textarea {
+	display: block;
+	resize: vertical;
+}
+
 /* empty model style--------------------------------------------------------------------------------------------------*/
 
 .bse-empty {
