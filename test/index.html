@@ -10,8 +10,10 @@
 
 	<title>Angular-bs-edit :: Angular directives for inline editing</title>
 
-	<!-- Bootstrap core CSS -->
+	<!-- CSS -->
 	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+
 	<!-- Angular-bs-edit CSS -->
 	<link href="../dist/css/angular-bs-edit.css" rel="stylesheet">
 
@@ -68,6 +70,12 @@
 						<div bse-textarea="data.textarea"></div>
 					</div>
 				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Date</label>
+					<div class="col-sm-9">
+						<div bse-date="data.date"></div>
+					</div>
+				</div>
 			</form>
 		</div>
 		<div class="col-sm-2">
@@ -87,6 +95,7 @@
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
 <!-- Angular-bs-edit script -->
 <script src="../dist/js/angular-bs-edit.js"></script>

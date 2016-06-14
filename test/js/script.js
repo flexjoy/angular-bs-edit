@@ -4,7 +4,8 @@ app.controller('Ctrl', function($scope, $q) {
 	var data = {
 		text: 'This is a sample text',
 		select: { id: 3, name: 'London'},
-		textarea: 'Lorem ipsum dolor sit amet'
+		textarea: 'Lorem ipsum dolor sit amet',
+		date: new Date()
 	};
 
 	var list = [
@@ -18,6 +19,7 @@ app.controller('Ctrl', function($scope, $q) {
 		$scope.data.text = '';
 		$scope.data.select = '';
 		$scope.data.textarea = '';
+		$scope.data.date = '';
 	};
 
 	$scope.getList = function() {

@@ -158,3 +158,47 @@ app.directive('bseTextarea', function() {
 		}
 	};
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// bseDate directive
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+app.directive('bseDate', function() {
+	return {
+		restrict: 'A',
+		scope: {
+			value: '=bseDate',
+			empty: '=?'
+		},
+		template: '<input class="form-control datepicker" readonly><span class="form-control" ng-class="{\'bse-empty\' : !value}">{{(value | date: "dd MMMM yyyy") || empty}}</span>',
+		
+		link: function(scope, element) {
+			
+			scope.empty = scope.empty ? scope.empty : 'empty';
+			element.addClass('edit-in-place');
+			var inputElement = angular.element( element.children()[0]);
+
+			inputElement.datepicker({
+				format: "dd MM yyyy",
+				orientation: "bottom auto",
+				todayHighlight: true,
+				autoclose: true,
+				clearBtn: true
+			});
+
+			inputElement.on('changeDate', function(res) {
+				scope.value = res.date;
+				scope.$apply();
+			});
+			
+			element.bind('click', function () {
+				inputElement.datepicker('setDate', scope.value);
+				element.addClass( 'active' );
+				inputElement[0].focus();
+			});
+			
+			inputElement.bind('hide', function() {
+				element.removeClass( 'active' );
+			});
+		}
+	};
+});
