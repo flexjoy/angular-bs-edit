@@ -5,31 +5,43 @@
  * Licensed under the MIT license (https://opensource.org/licenses/mit-license.php)
  */
 
-/* bse-text ----------------------------------------------------------------------------------------------------------*/
+/* common style definition -------------------------------------------------------------------------------------------*/
 
-[bse-text] {
+[bse-text], [bse-select] {
 	cursor: pointer;
 }
 
-[bse-text].edit-in-place.active {
+[bse-text].edit-in-place.active,
+[bse-select].edit-in-place.active{
 	padding: 0;
 }
 
-[bse-text].edit-in-place span {
+[bse-text].edit-in-place span,
+[bse-select].edit-in-place span{
 	color: #428bca;
 	border-color: transparent;
 	box-shadow: none;
 }
 
 [bse-text].edit-in-place.active span,
-[bse-text].edit-in-place input {
+[bse-text].edit-in-place input,
+[bse-select].edit-in-place.active span,
+[bse-select].edit-in-place select {
 	display: none;
 }
+
+/* bse-text ----------------------------------------------------------------------------------------------------------*/
 
 [bse-text].edit-in-place.active input {
 	display: inline-block;
 }
 
+/* bse-select --------------------------------------------------------------------------------------------------------*/
+
+[bse-select].edit-in-place.active select {
+	display: inline-block;
+	padding-left: 8px;
+}
 /* empty model style--------------------------------------------------------------------------------------------------*/
 
 .bse-empty {
