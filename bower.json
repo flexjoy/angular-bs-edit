@@ -21,5 +21,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "~3.x",
+    "angular": "~1.x"
+  }
 }
