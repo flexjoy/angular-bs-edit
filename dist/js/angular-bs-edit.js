@@ -9,6 +9,8 @@
 
 var app = angular.module('bs-edit', []);
 
+const EMPTY_VALUE = 'empty';
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // bseText directive
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,7 +24,7 @@ app.directive('bseText', function() {
 		template: '<input ng-model="newValue" class="form-control"><span class="form-control" ng-class="{\'bse-empty\' : !value}" ng-bind="value || empty"></span>',
 		link: function(scope, element) {
 
-			scope.empty = scope.empty ? scope.empty : 'empty';
+			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
 			element.addClass('edit-in-place');
 			var inputElement = angular.element(element.children()[0]);
 
@@ -76,7 +78,7 @@ app.directive('bseSelect', function() {
 		template: '<select ng-model="value" class="form-control" ng-options="v.name for v in values track by v.id"></select><span class="form-control" ng-class="{\'bse-empty\' : !value}" ng-bind="value.name || empty"></span>',
 		link: function(scope, element) {
 			
-			scope.empty = scope.empty ? scope.empty : 'empty';
+			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
 			element.addClass('edit-in-place');
 			var inputElement = angular.element(element.children()[0]);
 			var spanElement = angular.element( element.children()[1]);
@@ -125,7 +127,7 @@ app.directive('bseTextarea', function() {
 		template: '<textarea ng-model="newValue" class="form-control"></textarea><pre ng-class="{\'bse-empty\' : !value}" ng-bind="value || empty"></pre>',
 		link: function(scope, element) {
 
-			scope.empty = scope.empty ? scope.empty : 'empty';
+			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
 			element.addClass('edit-in-place');
 			var inputElement = angular.element( element.children()[0]);
 			var preElement = angular.element( element.children()[1]);
@@ -174,7 +176,7 @@ app.directive('bseDate', function() {
 		
 		link: function(scope, element) {
 			
-			scope.empty = scope.empty ? scope.empty : 'empty';
+			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
 			element.addClass('edit-in-place');
 			var inputElement = angular.element( element.children()[0]);
 
