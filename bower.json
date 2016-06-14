@@ -5,7 +5,10 @@
     "Sergey Cherepanov <flexjoy@ya.ru>"
   ],
   "description": "Angular directives for inline editing",
-  "main": "",
+  "main": [
+    "./dist/css/angular-bs-edit.css",
+    "./dist/js/angular-bs-edit.js"
+  ],
   "keywords": [
     "angular",
     "inline",
