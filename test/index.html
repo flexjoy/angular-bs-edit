@@ -12,13 +12,11 @@
 
 	<!-- Bootstrap core CSS -->
 	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Angular-bs-edit CSS -->
+	<link href="../dist/css/angular-bs-edit.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<style>
-		body {
-			padding-top: 70px;
-		}
-	</style>
+	<link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,7 +31,10 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">angular-bs-edit</a>
+			<a class="navbar-brand" href="#">
+				<img src="http://www.angularjstutorials.net/img/angular-js-logo.png">
+				angular-bs-edit
+			</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
@@ -44,13 +45,27 @@
 	</div>
 </nav>
 
-<div class="container">
+<div class="container" ng-app="bs-edit" ng-controller="Ctrl">
 	<div class="row">
-		<div class="col-lg-8">
-			<div>form</div>
+		<div class="col-sm-5">
+			<h4>Demo Form</h4>
+			<form class="form-horizontal frame">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Text</label>
+					<div class="col-sm-10">
+						<div bse-text="data.text"></div>
+					</div>
+				</div>
+			</form>
 		</div>
-		<div class="col-lg-4">
-			<div class="well">options</div>
+		<div class="col-sm-2">
+			<h4>&nbsp;</h4>
+			<button type="submit" class="btn btn-default btn-block" ng-click="clear()">Clear all</button>
+			<button type="submit" class="btn btn-default btn-block" ng-click="fill()">Fill all</button>
+		</div>
+		<div class="col-sm-5">
+			<h4>Model</h4>
+			<pre class="text-danger">{{data | json}}</pre>
 		</div>
 	</div>
 </div>
@@ -59,6 +74,13 @@
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../bower_components/angular/angular.min.js"></script>
+
+<!-- Angular-bs-edit script -->
+<script src="../dist/js/angular-bs-edit.js"></script>
+
+<!-- Test page script -->
+<script src="js/script.js"></script>
 </body>
 </html>
 

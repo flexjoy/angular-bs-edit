@@ -4,3 +4,35 @@
  * Copyright 2016 Sergey Cherepanov
  * Licensed under the MIT license (https://opensource.org/licenses/mit-license.php)
  */
+
+/* bse-text ----------------------------------------------------------------------------------------------------------*/
+
+[bse-text] {
+	cursor: pointer;
+}
+
+[bse-text].edit-in-place.active {
+	padding: 0;
+}
+
+[bse-text].edit-in-place span {
+	color: #428bca;
+	border-color: transparent;
+	box-shadow: none;
+}
+
+[bse-text].edit-in-place.active span,
+[bse-text].edit-in-place input {
+	display: none;
+}
+
+[bse-text].edit-in-place.active input {
+	display: inline-block;
+}
+
+/* empty model style--------------------------------------------------------------------------------------------------*/
+
+.bse-empty {
+	color: #a94442 !important;
+	font-style: italic;
+}
