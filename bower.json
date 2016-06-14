@@ -1,0 +1,22 @@
+{
+  "name": "angular-bs-edit",
+  "homepage": "https://github.com/flexjoy/angular-bs-edit",
+  "authors": [
+    "Sergey Cherepanov <flexjoy@ya.ru>"
+  ],
+  "description": "Angular directives for inline editing",
+  "main": "",
+  "keywords": [
+    "angular",
+    "inline",
+    "edit"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
