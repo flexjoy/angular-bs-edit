@@ -79,8 +79,9 @@ app.directive('bseSelect', function() {
 			scope.empty = scope.empty ? scope.empty : 'empty';
 			element.addClass('edit-in-place');
 			var inputElement = angular.element(element.children()[0]);
+			var spanElement = angular.element( element.children()[1]);
 			
-			element.bind('click', function () {
+			spanElement.bind('click', function () {
 				scope.onshow().then(
 					function (data){
 						scope.values = data;
