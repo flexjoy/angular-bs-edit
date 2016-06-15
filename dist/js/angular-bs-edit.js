@@ -19,7 +19,7 @@ app.directive('bseText', function() {
 		restrict: 'A',
 		scope: {
 			value: '=bseText',
-			empty: '=?',
+			empty: '@',
 			name: '@'
 		},
 		template: '<input name="{{name}}" ng-model="newValue" class="form-control"><span class="form-control" ng-class="{\'bse-empty\' : !value}" ng-bind="value || empty"></span>',
@@ -74,7 +74,7 @@ app.directive('bseSelect', function() {
 		scope: {
 			value: '=bseSelect',
 			onshow: '&',
-			empty: '=?',
+			empty: '@',
 			name: '@'
 		},
 		template: '<select name="{{name}}" ng-model="value" class="form-control" ng-options="v.name for v in values track by v.id"></select><span class="form-control" ng-class="{\'bse-empty\' : !value}" ng-bind="value.name || empty"></span>',
@@ -124,7 +124,7 @@ app.directive('bseTextarea', function() {
 		restrict: 'A',
 		scope: {
 			value: '=bseTextarea',
-			empty: '=?',
+			empty: '@',
 			name: '@'
 		},
 		template: '<textarea name="{{name}}" ng-model="newValue" class="form-control"></textarea><pre ng-class="{\'bse-empty\' : !value}" ng-bind="value || empty"></pre>',
@@ -173,7 +173,7 @@ app.directive('bseDate', function($timeout) {
 		restrict: 'A',
 		scope: {
 			value: '=bseDate',
-			empty: '=?',
+			empty: '@',
 			locale: '=',
 			name: '@'
 		},
