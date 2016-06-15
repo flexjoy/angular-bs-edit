@@ -7,6 +7,14 @@
 
 /* common style definition -------------------------------------------------------------------------------------------*/
 
+.has-error span, .bse-empty {
+	color: #a94442 !important;
+}
+
+.bse-empty {
+	font-style: italic;
+}
+
 [bse-text], [bse-select], [bse-textarea], [bse-date]{
 	cursor: pointer;
 }
@@ -72,9 +80,4 @@
 	background-color: white;
 }
 
-/* empty model style--------------------------------------------------------------------------------------------------*/
 
-.bse-empty {
-	color: #a94442 !important;
-	font-style: italic;
-}

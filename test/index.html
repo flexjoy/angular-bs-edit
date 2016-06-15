@@ -51,11 +51,11 @@
 	<div class="row">
 		<div class="col-sm-5">
 			<h4>Demo Form</h4>
-			<form class="form-horizontal frame">
-				<div class="form-group">
+			<form class="form-horizontal frame" name="testForm">
+				<div class="form-group" ng-class="{'has-error' : testForm.text.$invalid}">
 					<label class="col-sm-3 control-label">Text</label>
 					<div class="col-sm-9">
-						<div bse-text="data.text"></div>
+						<div bse-text="data.text" name="text"></div>
 					</div>
 				</div>
 				<div class="form-group">
@@ -82,6 +82,8 @@
 			<h4>&nbsp;</h4>
 			<button type="submit" class="btn btn-default btn-block" ng-click="clear()">Clear all</button>
 			<button type="submit" class="btn btn-default btn-block" ng-click="fill()">Fill all</button>
+			<button type="submit" class="btn btn-default btn-block" ng-click="invalid()">Invalid fields</button>
+			<button type="submit" class="btn btn-default btn-block" ng-click="valid()">Valid fields</button>
 			<br>
 			<label class="control-label">Date Language</label>
 			<select class="full-width" ng-model="locale">

@@ -19,9 +19,10 @@ app.directive('bseText', function() {
 		restrict: 'A',
 		scope: {
 			value: '=bseText',
-			empty: '=?'
+			empty: '=?',
+			name: '@'
 		},
-		template: '<input ng-model="newValue" class="form-control"><span class="form-control" ng-class="{\'bse-empty\' : !value}" ng-bind="value || empty"></span>',
+		template: '<input name="{{name}}" ng-model="newValue" class="form-control"><span class="form-control" ng-class="{\'bse-empty\' : !value}" ng-bind="value || empty"></span>',
 		link: function(scope, element) {
 
 			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;

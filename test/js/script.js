@@ -14,6 +14,14 @@ app.controller('Ctrl', function($scope, $q) {
 		{id: 3, name: 'London'},
 		{id: 4, name: 'Paris'}
 	];
+
+	$scope.invalid = function() {
+		$scope.testForm['text'].$invalid = true;
+	};
+
+	$scope.valid = function() {
+		$scope.testForm['text'].$invalid = false;
+	};
 	
 	$scope.clear = function () {
 		$scope.data.text = '';
