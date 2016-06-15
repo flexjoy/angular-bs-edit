@@ -1,13 +1,14 @@
 {
   "name": "angular-bs-edit",
+  "version": "0.0.1",
   "homepage": "https://github.com/flexjoy/angular-bs-edit",
   "authors": [
     "Sergey Cherepanov <flexjoy@ya.ru>"
   ],
   "description": "Angular directives for inline editing",
   "main": [
-    "./dist/css/angular-bs-edit.css",
-    "./dist/js/angular-bs-edit.js"
+    "dist/css/angular-bs-edit.css",
+    "dist/js/angular-bs-edit.js"
   ],
   "keywords": [
     "angular",
