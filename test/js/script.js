@@ -18,11 +18,13 @@ app.controller('Ctrl', function($scope, $q) {
 	$scope.invalid = function() {
 		$scope.testForm['text'].$invalid = true;
 		$scope.testForm['select'].$invalid = true;
+		$scope.testForm['textarea'].$invalid = true;
 	};
 
 	$scope.valid = function() {
 		$scope.testForm['text'].$invalid = false;
 		$scope.testForm['select'].$invalid = false;
+		$scope.testForm['textarea'].$invalid = false;
 	};
 	
 	$scope.clear = function () {

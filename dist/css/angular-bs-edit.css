@@ -7,7 +7,7 @@
 
 /* common style definition -------------------------------------------------------------------------------------------*/
 
-.has-error span, .bse-empty {
+.has-error span, .has-error pre, .bse-empty {
 	color: #a94442 !important;
 }
 

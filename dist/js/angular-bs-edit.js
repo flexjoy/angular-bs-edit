@@ -124,9 +124,10 @@ app.directive('bseTextarea', function() {
 		restrict: 'A',
 		scope: {
 			value: '=bseTextarea',
-			empty: '=?'
+			empty: '=?',
+			name: '@'
 		},
-		template: '<textarea ng-model="newValue" class="form-control"></textarea><pre ng-class="{\'bse-empty\' : !value}" ng-bind="value || empty"></pre>',
+		template: '<textarea name="{{name}}" ng-model="newValue" class="form-control"></textarea><pre ng-class="{\'bse-empty\' : !value}" ng-bind="value || empty"></pre>',
 		link: function(scope, element) {
 
 			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;

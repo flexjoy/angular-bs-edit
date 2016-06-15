@@ -64,10 +64,10 @@
 						<div bse-select="data.select" onshow="getList()" name="select"></div>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : testForm.textarea.$invalid}">
 					<label class="col-sm-3 control-label">Textarea</label>
 					<div class="col-sm-9">
-						<div bse-textarea="data.textarea"></div>
+						<div bse-textarea="data.textarea" name="textarea"></div>
 					</div>
 				</div>
 				<div class="form-group">
