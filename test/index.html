@@ -49,7 +49,7 @@
 
 <div class="container" ng-app="bs-edit" ng-controller="Ctrl">
 	<div class="row">
-		<div class="col-sm-5">
+		<div class="col-sm-8">
 			<h4>Demo Form</h4>
 			<form class="form-horizontal frame" name="testForm">
 				<div class="form-group" ng-class="{'has-error' : testForm.text.$invalid}">
@@ -77,25 +77,30 @@
 					</div>
 				</div>
 			</form>
+			<br>
+			<h4>Model</h4>
+			<pre class="model text-danger">{{data | json}}</pre>
 		</div>
-		<div class="col-sm-2">
+		<div class="col-sm-4">
 			<h4>&nbsp;</h4>
-			<button type="submit" class="btn btn-default btn-block" ng-click="clear()">Clear all</button>
-			<button type="submit" class="btn btn-default btn-block" ng-click="fill()">Fill all</button>
-			<button type="submit" class="btn btn-default btn-block" ng-click="invalid()">Invalid fields</button>
-			<button type="submit" class="btn btn-default btn-block" ng-click="valid()">Valid fields</button>
+			<div class="btn-group btn-group-justified" role="group">
+				<a href="" class="btn btn-default" ng-click="clear()">Clear all fields</a>
+				<a href="" class="btn btn-default " ng-click="fill()">Fill all fields</a>
+			</div>
+			<br>
+			<div class="btn-group btn-group-justified" role="group">
+				<a href="" class="btn btn-default" ng-click="invalid()">Set fields invalid</a>
+				<a href="" class="btn btn-default" ng-click="valid()">Set fields valid</a>
+			</div>
+			<br>
 			<br>
 			<label class="control-label">Date Language</label>
-			<select class="full-width" ng-model="locale">
+			<select class="form-control" ng-model="locale">
 				<option value="">English</option>
 				<option value="ru">Russian</option>
 				<option value="ja">Japanese</option>
 				<option value="es">Spanish</option>
 			</select>
-		</div>
-		<div class="col-sm-5">
-			<h4>Model</h4>
-			<pre class="model text-danger">{{data | json}}</pre>
 		</div>
 	</div>
 </div>
