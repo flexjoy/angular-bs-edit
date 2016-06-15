@@ -73,7 +73,7 @@
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Date</label>
 					<div class="col-sm-9">
-						<div bse-date="data.date"></div>
+						<div bse-date="data.date" locale="locale"></div>
 					</div>
 				</div>
 			</form>
@@ -82,6 +82,14 @@
 			<h4>&nbsp;</h4>
 			<button type="submit" class="btn btn-default btn-block" ng-click="clear()">Clear all</button>
 			<button type="submit" class="btn btn-default btn-block" ng-click="fill()">Fill all</button>
+			<br>
+			<label class="control-label">Date Language</label>
+			<select class="full-width" ng-model="locale">
+				<option value="">English</option>
+				<option value="ru">Russian</option>
+				<option value="ja">Japanese</option>
+				<option value="es">Spanish</option>
+			</select>
 		</div>
 		<div class="col-sm-5">
 			<h4>Model</h4>
@@ -96,6 +104,9 @@
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../bower_components/angular/angular.min.js"></script>
 <script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="../bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js" charset="UTF-8"></script>
+<script src="../bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ja.min.js" charset="UTF-8"></script>
+<script src="../bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js" charset="UTF-8"></script>
 
 <!-- Angular-bs-edit script -->
 <script src="../dist/js/angular-bs-edit.js"></script>

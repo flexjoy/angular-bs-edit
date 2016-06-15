@@ -20,3 +20,7 @@ body {
 .model {
 	white-space: pre-wrap;
 }
+
+.full-width {
+	width: 100%;
+}

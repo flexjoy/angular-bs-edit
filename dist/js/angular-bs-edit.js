@@ -165,42 +165,55 @@ app.directive('bseTextarea', function() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // bseDate directive
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-app.directive('bseDate', function() {
+app.directive('bseDate', function($timeout) {
 	return {
 		restrict: 'A',
 		scope: {
 			value: '=bseDate',
-			empty: '=?'
+			empty: '=?',
+			locale: '='
 		},
-		template: '<input class="form-control datepicker" readonly><span class="form-control" ng-class="{\'bse-empty\' : !value}">{{(value | date: "dd MMMM yyyy") || empty}}</span>',
+		template: '<input class="form-control"><span class="form-control" ng-class="{\'bse-empty\' : !value}">{{(value | date: "dd-MM-yyyy") || empty}}</span>',
 		
 		link: function(scope, element) {
 			
 			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
 			element.addClass('edit-in-place');
 			var inputElement = angular.element( element.children()[0]);
+			var spanElement = angular.element( element.children()[1]);
 
-			inputElement.datepicker({
-				format: "dd MM yyyy",
+			var options = {
+				language: scope.locale,
+				format: "dd-mm-yyyy",
 				orientation: "bottom auto",
 				todayHighlight: true,
 				autoclose: true,
 				clearBtn: true
-			});
+			};
 
-			inputElement.on('changeDate', function(res) {
-				scope.value = res.date;
-				scope.$apply();
+			function initDatepicker() {
+				inputElement.datepicker(options).attr('readonly','readonly');
+			}
+
+			scope.$watch('locale', function(val) {
+				angular.extend(options, {language: val});
+
+				$timeout(function() {
+					inputElement.datepicker('remove');
+					initDatepicker();
+				});
 			});
 			
-			element.bind('click', function () {
+			spanElement.bind('click', function () {
 				inputElement.datepicker('setDate', scope.value);
-				element.addClass( 'active' );
+				element.addClass('active');
 				inputElement[0].focus();
 			});
 			
-			inputElement.bind('hide', function() {
-				element.removeClass( 'active' );
+			inputElement.bind('hide', function(res) {
+				element.removeClass('active');
+				scope.value = res.date;
+				scope.$apply();
 			});
 		}
 	};
