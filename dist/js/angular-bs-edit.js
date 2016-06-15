@@ -74,9 +74,10 @@ app.directive('bseSelect', function() {
 		scope: {
 			value: '=bseSelect',
 			onshow: '&',
-			empty: '=?'
+			empty: '=?',
+			name: '@'
 		},
-		template: '<select ng-model="value" class="form-control" ng-options="v.name for v in values track by v.id"></select><span class="form-control" ng-class="{\'bse-empty\' : !value}" ng-bind="value.name || empty"></span>',
+		template: '<select name="{{name}}" ng-model="value" class="form-control" ng-options="v.name for v in values track by v.id"></select><span class="form-control" ng-class="{\'bse-empty\' : !value}" ng-bind="value.name || empty"></span>',
 		link: function(scope, element) {
 			
 			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
