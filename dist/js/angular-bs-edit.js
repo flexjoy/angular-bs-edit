@@ -26,7 +26,6 @@ module.directive('bseText', function() {
 		link: function(scope, element) {
 
 			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
-			element.addClass('edit-in-place');
 			var inputElement = angular.element(element.children()[0]);
 
 			element.bind('click', function () {
@@ -81,7 +80,6 @@ module.directive('bseSelect', function() {
 		link: function(scope, element) {
 			
 			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
-			element.addClass('edit-in-place');
 			var inputElement = angular.element(element.children()[0]);
 			var spanElement = angular.element( element.children()[1]);
 			
@@ -131,7 +129,6 @@ module.directive('bseTextarea', function() {
 		link: function(scope, element) {
 
 			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
-			element.addClass('edit-in-place');
 			var inputElement = angular.element( element.children()[0]);
 			var preElement = angular.element( element.children()[1]);
 
@@ -182,7 +179,6 @@ module.directive('bseDate', function($timeout) {
 		link: function(scope, element) {
 			
 			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
-			element.addClass('edit-in-place');
 			var inputElement = angular.element( element.children()[0]);
 			var spanElement = angular.element( element.children()[1]);
 
