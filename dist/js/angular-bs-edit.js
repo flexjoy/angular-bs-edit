@@ -191,23 +191,19 @@ module.directive('bseDate', function($timeout) {
 				clearBtn: true
 			};
 
-			function initDatepicker() {
-				inputElement.datepicker(options).attr('readonly','readonly');
-			}
-
 			scope.$watch('locale', function(val) {
 				angular.extend(options, {language: val});
 
 				$timeout(function() {
 					inputElement.datepicker('remove');
-					initDatepicker();
+					inputElement.datepicker(options).attr('readonly','readonly');
 				});
 			});
 			
 			spanElement.bind('click', function () {
 				inputElement.datepicker('setDate', new Date(scope.value));
 				element.addClass('active');
-				inputElement[0].focus();
+				inputElement.focus();
 			});
 			
 			inputElement.bind('hide', function(res) {
