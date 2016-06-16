@@ -22,7 +22,7 @@ module.directive('bseText', function() {
 			empty: '@',
 			name: '@'
 		},
-		template: '<input name="{{name}}" ng-model="newValue" class="form-control"><span class="form-control" ng-class="{\'bse-empty\' : !value}" ng-bind="value || empty"></span>',
+		template: '<input name="{{name}}" ng-model="newValue" class="form-control"><span ng-class="{\'bse-empty\' : !value}" ng-bind="value || empty"></span>',
 		link: function(scope, element) {
 
 			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
@@ -77,7 +77,7 @@ module.directive('bseSelect', function() {
 			empty: '@',
 			name: '@'
 		},
-		template: '<select name="{{name}}" ng-model="value" class="form-control" ng-options="v.name for v in values track by v.id"></select><span class="form-control" ng-class="{\'bse-empty\' : !value}" ng-bind="value.name || empty"></span>',
+		template: '<select name="{{name}}" ng-model="value" class="form-control" ng-options="v.name for v in values track by v.id"></select><span ng-class="{\'bse-empty\' : !value}" ng-bind="value.name || empty"></span>',
 		link: function(scope, element) {
 			
 			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
@@ -177,7 +177,7 @@ module.directive('bseDate', function($timeout) {
 			locale: '=',
 			name: '@'
 		},
-		template: '<input name="{{name}}" ng-model="name" class="form-control"><span class="form-control" ng-class="{\'bse-empty\' : !value}">{{(value | date: "dd-MM-yyyy") || empty}}</span>',
+		template: '<input name="{{name}}" ng-model="name" class="form-control"><span ng-class="{\'bse-empty\' : !value}">{{(value | date: "dd-MM-yyyy") || empty}}</span>',
 		
 		link: function(scope, element) {
 			
