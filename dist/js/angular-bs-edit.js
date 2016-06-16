@@ -177,7 +177,7 @@ module.directive('bseDate', function($timeout) {
 			locale: '=',
 			name: '@'
 		},
-		template: '<input name="{{name}}" ng-model="name" class="form-control"><span ng-class="{\'bse-empty\' : !value}">{{(value | date: "dd-MM-yyyy") || empty}}</span>',
+		template: '<input name="{{name}}" ng-model="value" class="form-control"><span ng-class="{\'bse-empty\' : !value}">{{(value | date: "dd-MM-yyyy") || empty}}</span>',
 		
 		link: function(scope, element) {
 			
