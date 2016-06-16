@@ -7,9 +7,7 @@
 
 /* common style definition -------------------------------------------------------------------------------------------*/
 
-.has-error span,
-.has-error pre,
-.bse-empty {
+.has-error span, .has-error pre, .bse-empty {
 	color: #a94442 !important;
 }
 
@@ -17,58 +15,62 @@
 	font-style: italic;
 }
 
-[bse-text].active,
-[bse-select].active {
+[bse-text].edit-in-place.active,
+[bse-select].edit-in-place.active{
 	padding: 0;
 }
 
-[bse-text] span,
-[bse-select] span,
-[bse-date] span,
-[bse-textarea] pre {
+[bse-text].edit-in-place span,
+[bse-select].edit-in-place span,
+[bse-date].edit-in-place span {
 	color: #428bca;
+	display: inline-block;
 	padding: 7px 0;
 	cursor: pointer;
+
 }
 
-[bse-text] span,
-[bse-select] span,
-[bse-date] span,
-[bse-text].active input,
-[bse-select].active select,
-[bse-date].active input {
+[bse-text].edit-in-place.active span, [bse-text].edit-in-place input,
+[bse-select].edit-in-place.active span, [bse-select].edit-in-place select,
+[bse-textarea].edit-in-place.active pre, [bse-textarea].edit-in-place textarea,
+[bse-date].edit-in-place.active span, [bse-date].edit-in-place input {
+	display: none;
+}
+
+/* bse-text ----------------------------------------------------------------------------------------------------------*/
+
+[bse-text].edit-in-place.active input {
 	display: inline-block;
 }
 
-[bse-text] input,
-[bse-select] select,
-[bse-textarea] textarea,
-[bse-date] input,
-[bse-text].active span,
-[bse-select].active span,
-[bse-textarea].active pre,
-[bse-date].active span {
-	display: none;
+/* bse-select --------------------------------------------------------------------------------------------------------*/
+
+[bse-select].edit-in-place.active select {
+	display: inline-block;
 }
 
 /* bse-textarea ------------------------------------------------------------------------------------------------------*/
 
-[bse-textarea] pre {
+[bse-textarea].edit-in-place pre {
+	color: #428bca;
 	font-family: inherit;
 	font-size: inherit;
+	padding: 7px 0;
 	border: none;
 	background-color: transparent;
 	white-space: pre-wrap;
 	margin-bottom: 0;
+	cursor: pointer;
 }
 
-[bse-textarea].active textarea {
+[bse-textarea].edit-in-place.active textarea {
 	display: block;
 	resize: vertical;
 }
 
 /* bse-date ----------------------------------------------------------------------------------------------------------*/
 
-[bse-date].active input {
+[bse-date].edit-in-place.active input {
+	display: inline-block;
 	background-color: white;
 }
