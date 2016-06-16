@@ -209,7 +209,7 @@ module.directive('bseDate', function($timeout) {
 			});
 			
 			spanElement.bind('click', function () {
-				inputElement.datepicker('setDate', scope.value);
+				inputElement.datepicker('setDate', new Date(scope.value));
 				element.addClass('active');
 				inputElement[0].focus();
 			});

@@ -7,7 +7,7 @@ app.controller('Ctrl', function($scope, $q) {
 		text: 'This is a sample text',
 		select: { id: 3, name: 'London'},
 		textarea: 'Lorem ipsum dolor sit amet',
-		date: new Date()
+		date: 1465592400000
 	};
 
 	var list = [
