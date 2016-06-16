@@ -1,5 +1,7 @@
 'use strict';
 
+var app = angular.module('test-app', ['bs-edit']);
+
 app.controller('Ctrl', function($scope, $q) {
 	var data = {
 		text: 'This is a sample text',
