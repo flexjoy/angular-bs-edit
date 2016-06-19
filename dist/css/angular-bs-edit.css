@@ -13,6 +13,10 @@
 	color: #a94442 !important;
 }
 
+.has-error .bs-edit[bse-checkbox] input + label:before {
+	background-color: #f2dede !important;
+}
+
 .bse-empty {
 	font-style: italic;
 }
@@ -47,7 +51,8 @@
 [bse-textarea].bs-edit.active pre,
 [bse-textarea].bs-edit textarea,
 [bse-date].bs-edit.active span,
-[bse-date].bs-edit input {
+[bse-date].bs-edit input,
+[bse-checkbox].bs-edit input:not(checked) {
 	display: none;
 }
 
@@ -71,4 +76,42 @@
 
 [bse-date].bs-edit.active input {
 	background-color: white;
+}
+
+/* bse-checkbox ------------------------------------------------------------------------------------------------------*/
+
+[bse-checkbox].bs-edit input:not(checked) + label {
+	position: relative;
+	cursor: pointer;
+}
+
+[bse-checkbox].bs-edit input:not(checked) + label:before {
+	content: '';
+	position: absolute;
+	top: -4px;
+	left: 0;
+	width: 38px;
+	height: 20px;
+	border-radius: 10px;
+	background: #CDD1DA;
+	box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+}
+[bse-checkbox].bs-edit input:not(checked) + label:after {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: 2px;
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	background: #FFF;
+	box-shadow: 0 2px 5px rgba(0,0,0,.3);
+	transition: all .2s;
+}
+
+[bse-checkbox].bs-edit input:checked + label:before {
+	background-color: #428bca;
+}
+[bse-checkbox].bs-edit input:checked + label:after {
+	left: 20px;
 }

@@ -7,7 +7,8 @@ app.controller('Ctrl', function($scope, $q) {
 		text: 'This is a sample text',
 		select: { id: 3, name: 'London'},
 		textarea: 'Lorem ipsum dolor sit amet',
-		date: 1465592400000
+		date: 1465592400000,
+		checkbox: true
 	};
 
 	var list = [
@@ -22,6 +23,7 @@ app.controller('Ctrl', function($scope, $q) {
 		$scope.testForm.select.$invalid = true;
 		$scope.testForm.textarea.$invalid = true;
 		$scope.testForm.date.$invalid = true;
+		$scope.testForm.checkbox.$invalid = true;
 	};
 
 	$scope.valid = function() {
@@ -29,6 +31,7 @@ app.controller('Ctrl', function($scope, $q) {
 		$scope.testForm.select.$invalid = false;
 		$scope.testForm.textarea.$invalid = false;
 		$scope.testForm.date.$invalid = false;
+		$scope.testForm.checkbox.$invalid = false;
 	};
 	
 	$scope.clear = function () {
@@ -36,6 +39,7 @@ app.controller('Ctrl', function($scope, $q) {
 		$scope.data.select = '';
 		$scope.data.textarea = '';
 		$scope.data.date = '';
+		$scope.data.checkbox = null;
 	};
 
 	$scope.getList = function() {

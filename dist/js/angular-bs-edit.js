@@ -219,3 +219,26 @@ module.directive('bseDate', function($timeout, EMPTY_VALUE) {
 		}
 	};
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// bseCheckbox directive
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+module.directive('bseCheckbox', function() {
+	return {
+		restrict: 'A',
+		scope: {
+			value: '=bseCheckbox',
+			name: '@'
+		},
+		template: '<input type="checkbox" name="{{name}}" ng-model="value"><label></label>',
+		link: function(scope, element) {
+
+			element.addClass('bs-edit');
+			
+			element.bind('click', function () {
+				scope.value = !scope.value;
+				scope.$apply();
+			});
+		}
+	};
+});
