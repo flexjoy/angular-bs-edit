@@ -1,6 +1,10 @@
 # angular-bs-edit
 
-Angular-bs-edit is a set of AngularJS directives for inline editing in the Bootstrap style. The directives are:
+Angular-bs-edit is a set of AngularJS directives for inline editing in the Bootstrap style.
+ 
+- [Online Demo](https://flexjoy.github.io/angular-bs-edit/) 
+
+The directives are:
 
 - [bseText](#bsetext)
 - [bseSelect](#bseselect)
