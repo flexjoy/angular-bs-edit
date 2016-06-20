@@ -183,6 +183,7 @@ module.directive('bseDate', function($timeout, EMPTY_VALUE) {
 		link: function(scope, element) {
 			
 			scope.empty = scope.empty ? scope.empty : EMPTY_VALUE;
+			scope.value = scope.value ? scope.value : '';
 			element.addClass('bs-edit');
 			var inputElement = angular.element( element.children()[0]);
 			var spanElement = angular.element( element.children()[1]);
@@ -204,7 +205,7 @@ module.directive('bseDate', function($timeout, EMPTY_VALUE) {
 					inputElement.datepicker(options).attr('readonly','readonly');
 				});
 			});
-			
+
 			spanElement.bind('click', function () {
 				inputElement.datepicker('setDate', new Date(scope.value));
 				element.addClass('active');
