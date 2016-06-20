@@ -2,11 +2,11 @@
 
 Angular-bs-edit is a set of AngularJS directives for inline editing in the Bootstrap style. The directives are:
 
-- [bseText](#bseText)
-- [bseSelect](#bseSelect)
-- [bseTextarea](#bseTextarea)
-- [bseDate](#bseDate)
-- [bseCheckbox](#bseCheckbox)  
+- [bseText](#bsetext)
+- [bseSelect](#bseselect)
+- [bseTextarea](#bsetextarea)
+- [bseDate](#bsedate)
+- [bseCheckbox](#bsecheckbox)  
 
 ## Requirements
 
