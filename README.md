@@ -42,7 +42,7 @@ angular-bs-edit/
 
 ## Usage
 
-######Load CSS and JS
+###### Load CSS and JS
 
 ```html
 <link href="dist/css/angular-bs-edit.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@ angular-bs-edit/
 <script src="dist/js/angular-bs-edit.min.js"></script>
 ```
 
-######Add "angular-bs-edit" to dependencies 
+###### Add "angular-bs-edit" to dependencies 
 
 ```javascript
 angular.module('MyApp', ['bs-edit']);
@@ -60,13 +60,13 @@ angular.module('MyApp', ['bs-edit']);
 
 ### bseText
 
-######Basic directive
+###### Basic directive
 
 ```html
 <div bse-text="model"></div>
 ```
 
-######API
+###### API
 
 Attribute|Type|Required|Default|Description
 ---|---|---|---|---
@@ -76,13 +76,13 @@ empty|`string`|no|`empty`|Displayed value for empty field
 
 ### bseSelect
 
-######Basic directive
+###### Basic directive
 
 ```html
 <div bse-select="model" onshow="getList()"></div>
 ```
 
-######API
+###### API
 
 Attribute|Type|Required|Default|Description
 ---|---|---|---|---
@@ -93,13 +93,13 @@ empty|`string`|no|`empty`|Displayed value for empty field
 
 ### bseTextarea
 
-######Basic directive
+###### Basic directive
 
 ```html
 <div bse-textarea="model"></div>
 ```
 
-######API
+###### API
 
 Attribute|Type|Required|Default|Description
 ---|---|---|---|---
@@ -109,13 +109,13 @@ empty|`string`|no|`empty`|Displayed value for empty field
 
 ### bseDate
 
-######Basic directive
+###### Basic directive
 
 ```html
 <div bse-date="model"></div>
 ```
 
-######API
+###### API
 
 Attribute|Type|Required|Default|Description
 ---|---|---|---|---
@@ -126,13 +126,13 @@ empty|`string`|no|`empty`|Displayed value for empty field
 
 ### bseCheckbox
 
-######Basic directive
+###### Basic directive
 
 ```html
 <div bse-checkbox="model"></div>
 ```
 
-######API
+###### API
 
 Attribute|Type|Required|Default|Description
 ---|---|---|---|---
